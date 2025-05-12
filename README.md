@@ -3,7 +3,9 @@ A library for socket programming in c.
 
 ## Files
 host.c: The c code for server and client.
+
 host.h: The library.
+
 main.c: Example code for users.
 
 
