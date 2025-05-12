@@ -6,7 +6,7 @@ host.c: The c code for server and client.
 
 host.h: The library.
 
-main.c: Example code for users.
+example.c: Example code for users.
 
 
 ## Functions

@@ -78,14 +78,18 @@ int main() {
 
         switch (choice) {
             case 1:
-                start_server(server_handler);
+                int max_clients;
+                printf("Enter server size: ");
+                scanf("%d", &max_clients); 
+                clear_stdin();
+                start_server(server_handler, --max_clients);
                 break;
             case 2: {
                 char ip[16];
                 printf("Enter server IP: ");
                 scanf("%15s", ip);
                 clear_stdin();
-                start_client(ip, client_handler);
+                start_client(client_handler, ip);
                 break;
             }
             case 3:

@@ -10,7 +10,7 @@
 #define PORT 12345
 #define BUFFER_SIZE 1024
 
-void start_server(message_handler_t server_handler) {
+void start_server(message_handler_t server_handler, const int max_connections) {
     int server_fd, new_socket;
     struct sockaddr_in address;
     socklen_t addrlen = sizeof(address);
@@ -33,7 +33,7 @@ void start_server(message_handler_t server_handler) {
         exit(EXIT_FAILURE);
     }
 
-    listen(server_fd, 3);
+    listen(server_fd, max_connections);
     printf("Server listening on port %d\n", PORT);
 
     while (1) {
@@ -55,7 +55,7 @@ void start_server(message_handler_t server_handler) {
     }
 }
 
-void start_client(const char *server_ip, message_handler_t client_handler) {
+void start_client(message_handler_t client_handler, const char *server_ip) {
     int sock;
     struct sockaddr_in server_addr;
 
