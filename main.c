@@ -12,7 +12,7 @@ void clear_stdin() {
 }
 
 void server_handler(int cli_sock) {
-    char buffer[BUFFER_SIZE] = {0};
+    char buffer[BUFFER_SIZE+1] = {0};
     char message[BUFFER_SIZE] = {0};
 
     while (1) {
@@ -40,7 +40,7 @@ void server_handler(int cli_sock) {
 }
 
 void client_handler(int sock) {
-    char buffer[BUFFER_SIZE] = {0};
+    char buffer[BUFFER_SIZE+1] = {0};
     char message[BUFFER_SIZE] = {0};
 
     while (1) {
